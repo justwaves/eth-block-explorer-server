@@ -14,13 +14,13 @@ var _api = _interopRequireDefault(require("./api"));
 
 var PORT = process.env.PORT;
 var app = new _koa["default"]();
-var router = new _koaRouter["default"]();
-var corsOptions = {
-  origin: '/',
-  optionsSuccessStatus: 200,
-  credentials: true
-};
-app.use((0, _cors["default"])(corsOptions)); // api route 적용
+var router = new _koaRouter["default"](); // const corsOptions = {
+//   origin: 'https://eth-block-explorer.netlify.app',
+//   optionsSuccessStatus: 200,
+//   credentials: true,
+// };
+
+app.use((0, _cors["default"])()); // api route 적용
 
 router.use('/api', _api["default"].routes());
 app.use((0, _koaBodyparser["default"])()); // app 인스턴스에 router 적용

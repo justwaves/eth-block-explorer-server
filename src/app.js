@@ -1,7 +1,7 @@
 import Koa from 'koa';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
-import cors from 'cors';
+import cors from '@koa/cors';
 
 import api from './api';
 
@@ -10,12 +10,12 @@ const { PORT } = process.env;
 const app = new Koa();
 const router = new Router();
 
-// const corsOptions = {
-//   origin: 'https://eth-block-explorer.netlify.app',
-//   optionsSuccessStatus: 200,
-//   credentials: true,
-// };
-app.use(cors());
+const corsOptions = {
+  origin: 'https://eth-block-explorer.netlify.app',
+  optionsSuccessStatus: 200,
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 // api route 적용
 router.use('/api', api.routes());
