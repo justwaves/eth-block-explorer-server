@@ -11,7 +11,7 @@ const app = new Koa();
 const router = new Router();
 
 const corsOptions = {
-  origin: 'https://eth-block-explorer.netlify.app',
+  origin: '*',
   optionsSuccessStatus: 200,
   credentials: true,
 };
