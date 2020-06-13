@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node build/server.js",
+    "start": "node build/app.js",
     "dev": "nodemon --watch src/ -r esm src/app.js",
     "build": "babel src -d build"
   },
